@@ -17,6 +17,7 @@ var kubeconfig string
 func init() {
 	flag.StringVar(&kubeconfig, "kubeconfig", filepath.Join(os.Getenv("HOME"), ".kube", "config"), "absolute path to the kubeconfig file")
 }
+
 func main() {
 	config, err := clientcmd.BuildConfigFromFlags("", kubeconfig)
 	if err != nil {
